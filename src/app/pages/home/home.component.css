@@ -1,0 +1,8 @@
+.home___container {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+  height: 100vh;           /* Preenche a altura da tela */
+  padding: 20px;           /* Espaçamento */
+  box-sizing: border-box;
+}

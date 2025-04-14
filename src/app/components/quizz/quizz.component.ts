@@ -1,78 +1,93 @@
 import { Component, OnInit } from '@angular/core';
-import quizz_questions from "../../../assets/data/quizz_questions.json"
 
 @Component({
   selector: 'app-quizz',
   templateUrl: './quizz.component.html',
   styleUrls: ['./quizz.component.css']
 })
-
 export class QuizzComponent implements OnInit {
+  title = 'Descubra qual linguagem combina com você!';
+  questions = [
+    {
+      question: 'Qual seu estilo de trabalho?',
+      options: [
+        { name: 'Prático e direto ao ponto', alias: 'A' },
+        { name: 'Criativo e visual', alias: 'B' },
+        { name: 'Analítico e curioso', alias: 'C' }
+      ]
+    },
+    {
+      question: 'Qual café você escolheria para programar?',
+      options: [
+        { name: 'Expresso forte', alias: 'A' },
+        { name: 'Latte com espuma', alias: 'B' },
+        { name: 'Chá com limão', alias: 'C' }
+      ]
+    },
+    {
+      question: 'Qual seu emoji favorito?',
+      options: [
+        { name: '💻', alias: 'A' },
+        { name: '🎨', alias: 'B' },
+        { name: '🧠', alias: 'C' }
+      ]
+    }
+  ];
 
-  title:string = ""
-
-  questions:any
-  questionSelected:any
-
-  answers:string[] = []
-  answerSelected:string =""
-
-  questionIndex:number =0
-  questionMaxIndex:number=0
-
-  finished:boolean = false
-
-  constructor() { }
+  questionSelected: any;
+  questionIndex = 0;
+  finished = false;
+  answers: string[] = [];
+  answerSelected = '';
 
   ngOnInit(): void {
-    if(quizz_questions){
-      this.finished = false
-      this.title = quizz_questions.title
-
-      this.questions = quizz_questions.questions
-      this.questionSelected = this.questions[this.questionIndex]
-
-      this.questionIndex = 0
-      this.questionMaxIndex = this.questions.length
-
-      console.log(this.questionIndex)
-      console.log(this.questionMaxIndex)
-    }
-
+    this.setCurrentQuestion();
   }
 
-  playerChoose(value:string){
-    this.answers.push(value)
-    this.nextStep()
-
+  setCurrentQuestion(): void {
+    this.questionSelected = this.questions[this.questionIndex];
   }
 
-  async nextStep(){
-    this.questionIndex+=1
+  playerChoose(alias: string): void {
+    this.answers.push(alias);
+    this.nextStep();
+  }
 
-    if(this.questionMaxIndex > this.questionIndex){
-        this.questionSelected = this.questions[this.questionIndex]
-    }else{
-      const finalAnswer:string = await this.checkResult(this.answers)
-      this.finished = true
-      this.answerSelected = quizz_questions.results[finalAnswer as keyof typeof quizz_questions.results ]
+  nextStep(): void {
+    this.questionIndex++;
+    if (this.questionIndex < this.questions.length) {
+      this.setCurrentQuestion();
+    } else {
+      this.finished = true;
+      this.checkResult();
     }
   }
 
-  async checkResult(anwsers:string[]){
+  checkResult(): void {
+    const resultado = this.answers.reduce((acc: any, curr: string) => {
+      acc[curr] = (acc[curr] || 0) + 1;
+      return acc;
+    }, {});
 
-    const result = anwsers.reduce((previous, current, i, arr)=>{
-        if(
-          arr.filter(item => item === previous).length >
-          arr.filter(item => item === current).length
-        ){
-          return previous
-        }else{
-          return current
-        }
-    })
+    const maisFrequente = Object.entries(resultado).sort((a, b) => b[1] as number - (a[1] as number))[0][0];
 
-    return result
+    switch (maisFrequente) {
+      case 'A':
+        this.answerSelected = '💻 <b>Você é Java</b>: estruturada, confiável e poderosa. Gosta de regras, estabilidade e performance!';
+        break;
+      case 'B':
+        this.answerSelected = '🎨 <b>Você é JavaScript</b>: criativa, dinâmica e cheia de ideias. Gosta de inovação e de transformar interfaces!';
+        break;
+      case 'C':
+        this.answerSelected = '🧠 <b>Você é Python</b>: prática, elegante e focada em soluções inteligentes. Adora automatizar tudo!';
+        break;
+    }
   }
 
+  restartQuiz(): void {
+    this.finished = false;
+    this.answers = [];
+    this.questionIndex = 0;
+    this.setCurrentQuestion();
+  }
 }

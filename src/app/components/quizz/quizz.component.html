@@ -1,28 +1,32 @@
 <div class="quizz__container">
-
   <div class="quizz_logo">
-    <img src="assets/imgs/logo.png" alt="" srcset="">
-    <h3>{{title}}</h3>
+    <img src="assets/imgs/logo-sandra.png" alt="Logo BuzzFeed da Sandra" style="width: 320px;" />
+    <h3>{{ title }}</h3>
   </div>
 
-  <div *ngIf=!finished class="quizz_questions">
-      <h3>{{questionSelected.question}}</h3>
+  <!-- Agrupando perguntas e opções em um único bloco *ngIf -->
+  <div *ngIf="!finished">
+    <div class="quizz_questions">
+      <h3>{{ questionSelected.question }}</h3>
+    </div>
+
+    <div class="quizz_options">
+      <button
+        *ngFor="let option of questionSelected.options"
+        (click)="playerChoose(option.alias)"
+        class="btn-option"
+      >
+        <i class="fa fa-check-circle"></i> {{ option.name }}
+      </button>
+    </div>
   </div>
 
-  <div *ngIf=!finished class="quizz_options">
 
-    <button
-      *ngFor="let option of questionSelected.options; let i = index"
-      (click)="playerChoose(option.alias)"
-      class="btn-option"
-    >
-      {{option.name}}
-    </button>
-
-  </div>
-
-  <div *ngIf=finished class="quizz_results">
+  <div *ngIf="finished" class="quizz_results">
     <h1>O Seu resultado é:</h1>
-    <p>{{answerSelected}}</p>
+    <p [innerHTML]="answerSelected"></p>
+    <button class="btn-restart" (click)="restartQuiz()">
+      <i class="fa fa-redo"></i> Refazer Quiz
+    </button>
   </div>
 </div>

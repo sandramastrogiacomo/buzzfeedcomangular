@@ -1,55 +1,34 @@
 {
-  "title":"Você seria um heroi ou vilão ?",
-  "questions":[
+  "title": "DevQuiz da Sandra",
+  "questions": [
     {
-      "id":1,
-      "question": "Qual super poder você escolheria ?",
-      "options":[
-        {"id": 1, "name":"Raios-Lasers", "alias":"A"},
-        {"id": 2, "name":"Voar", "alias":"B"},
-        {"id": 3, "name":"Explodir coisas", "alias":"A"},
-        {"id": 4, "name":"Curar feridas", "alias":"B"},
-        {"id": 5, "name":"Soltar fogo pelas mãos", "alias":"A"}
+      "question": "Qual seu estilo de trabalho?",
+      "options": [
+        { "name": "Prático e direto ao ponto", "alias": "A" },
+        { "name": "Criativo e visual", "alias": "B" },
+        { "name": "Analítico e curioso", "alias": "C" }
       ]
     },
     {
-      "id":2,
-      "question": "Quem você salvaria primeiro ?",
-      "options":[
-        {"id": 1, "name":"Crianças", "alias":"A"},
-        {"id": 2, "name":"Idosos", "alias":"A"},
-        {"id": 3, "name":"Não saberia escolher", "alias":"B"}
+      "question": "Qual café você escolheria para programar?",
+      "options": [
+        { "name": "Expresso forte", "alias": "A" },
+        { "name": "Latte com espuma", "alias": "B" },
+        { "name": "Chá com limão", "alias": "C" }
       ]
     },
     {
-      "id":3,
-      "question": "Qual a sua maior preocupação ao enfretar outro super ser ?",
-      "options":[
-        {"id": 1, "name":"Não destruir prédios", "alias":"B"},
-        {"id": 2, "name":"Socar a cara do inimigo", "alias":"A"},
-        {"id": 3, "name":"Não sujar meu traje", "alias":"A"},
-        {"id": 4, "name":"Não deixar ninguém se ferir", "alias":"B"}
-      ]
-    },
-    {
-      "id":4,
-      "question": "Qual o seu maior foco ?",
-      "options":[
-        {"id": 1, "name":"Ficar rico com poderes", "alias":"A"},
-        {"id": 2, "name":"Salvar a cidade", "alias":"B"}
-      ]
-    },
-    {
-      "id":5,
-      "question": "Qual o seu apelido de super ser ?",
-      "options":[
-        {"id": 1, "name":"O Terrivel", "alias":"A"},
-        {"id": 2, "name":"Amigo da vizinhança", "alias":"B"}
+      "question": "Qual seu emoji favorito?",
+      "options": [
+        { "name": "💻", "alias": "A" },
+        { "name": "🎨", "alias": "B" },
+        { "name": "🧠", "alias": "C" }
       ]
     }
   ],
-  "results":{
-    "A": "Você muito provavelmente seria um super vilão!",
-    "B": "Você muito provavelmente seria um super Herói!"
+  "results": {
+    "A": "Você é Java! Foco, robustez e praticidade. Ideal para grandes estruturas e performance.",
+    "B": "Você é JavaScript! Criativa, dinâmica e cheia de estilo. Brilha no front e surpreende no back!",
+    "C": "Você é Python! Curiosa, lógica e versátil. Resolve problemas com clareza e elegância."
   }
 }

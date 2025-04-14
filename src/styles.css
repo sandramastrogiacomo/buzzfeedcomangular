@@ -1,12 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
-*{
-  padding:0;
-  margin:0;
-  border:0;
-  box-sizing: border-box;
-  color:antiquewhite;
+/* Corpo do site com fundo escuro */
+body {
+  background-color: #121212;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f1f1f1;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-  background-color: #1F1147;
+/* Container principal do quiz */
+.quiz-container {
+  background-color: #1e1e1e; /* Fundo escuro do quiz */
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Título do quiz */
+h1 {
+  color: #e74c3c; /* Vermelho original */
+  text-align: center;
+}
+
+/* Botões */
+button {
+  background-color: #2ecc71; /* Verde original */
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #27ae60;
+}
+
+/* Resultado */
+.resultado {
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Links (se tiver) */
+a {
+  color: #90caf9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #bb86fc;
+  text-decoration: underline;
+}
+
+/* Container da página inicial */
+.home___container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
 }

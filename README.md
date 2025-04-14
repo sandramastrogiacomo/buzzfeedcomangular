@@ -1,27 +1,62 @@
-# ProjetoBuzzfeed
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+# BuzzFeed Quiz da Sandra - Decola Tech 2025
 
-## Development server
+## Descrição
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Este projeto é uma implementação de um quiz inspirado no estilo dos quizzes do BuzzFeed, criado durante o bootcamp **Decola Tech 2025** da **Avanade**. O objetivo foi recriar a funcionalidade de um quiz interativo em Angular, com interface visual e lógica de questões baseadas em escolhas do usuário.
 
-## Code scaffolding
+### Tecnologias Utilizadas
+- **Frontend**: Angular
+- **Estilo**: CSS
+- **Design**: Baseado nos quizzes interativos do BuzzFeed
+- **Ferramentas**: 
+  - Angular CLI
+  - IntelliJ IDEA (Editor de código)
+  
+### Funcionalidades
+- Exibição de questões com múltiplas opções de resposta.
+- Calcula o resultado do quiz baseado nas escolhas do usuário.
+- Interface responsiva e interativa.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Como rodar o projeto
 
-## Build
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/sandramastrogiacomo/buzzfeedcomangular.git
+    ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Navegue até a pasta do projeto:
+    ```bash
+    cd seu-repositorio
+    ```
 
-## Running unit tests
+3. Instale as dependências:
+    ```bash
+    npm install
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Rode o projeto:
+    ```bash
+    ng serve --open
+    ```
 
-## Running end-to-end tests
+Isso abrirá o projeto no seu navegador, geralmente na URL `http://localhost:4200`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contribuições
 
-## Further help
+Este projeto foi desenvolvido como parte do bootcamp **Decola Tech 2025** e é um exercício de aprendizado. Contribuições para melhorias e ajustes são bem-vindas!
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Licença
+
+Este projeto é de código aberto. Sinta-se à vontade para modificar e adaptar conforme necessário.
+
+---
+
+🙋‍♀️ Autora
+
+Feito com 💛 por Sandra Mastrogiacomo
+
+
+
+📄 Licença
+Este projeto está sob a licença MIT — fique à vontade para usar, melhorar e compartilhar!
